@@ -1,2 +1,5 @@
-package hu.progmasters;public class AnimalMain {
+package hu.progmasters;
+
+public class AnimalMain {
+
 }
