@@ -6,13 +6,9 @@ import java.util.List;
 public abstract class Person {
     protected String name;
     protected int phoneNumber;
-    protected String address;
-    List<Owner> ownerList = new ArrayList<>();
-    List<Volunteer> volunteerList = new ArrayList<>();
-    List<Worker> workerList = new ArrayList();
+    protected Address address;
 
-
-    public Person(String name, int phoneNumber, String address) {
+    public Person(String name, int phoneNumber, Address address) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;
@@ -34,11 +30,11 @@ public abstract class Person {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getAddress() {
+    public Address getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 }
