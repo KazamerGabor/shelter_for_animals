@@ -15,6 +15,7 @@ public class DogShelter {
         this.ownerList = ownerList;
         this.volunteerList = volunteerList;
         this.workerList = workerList;
+
     }
 
     public List<Dog> getDogList() {
