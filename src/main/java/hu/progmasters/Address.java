@@ -28,6 +28,7 @@ public class Address {
         return addressId;
     }
 
+
     public int getPostalCode() {
         return postalCode;
     }
