@@ -1,10 +1,10 @@
-package hu.progmasters;
+package hu.progmasters.animals;
 
 import hu.progmasters.enums.Sex;
 import hu.progmasters.enums.Status;
 
 public class Dog {
-    private int id;
+    private int Dogid;
     private String name;
     private String breed;
     private String dateOfBirth;
@@ -14,8 +14,8 @@ public class Dog {
     private DogCoat dogCoat;
     private DogHealth dogHealth;
 
-    public Dog(int id, String name, String breed, String dateOfBirth, Sex sex, int weight, Status status, DogCoat dogCoat, DogHealth dogHealth) {
-        this.id = id;
+    public Dog(int Dogid, String name, String breed, String dateOfBirth, Sex sex, int weight, Status status, DogCoat dogCoat, DogHealth dogHealth) {
+        this.Dogid = Dogid;
         this.name = name;
         this.breed = breed;
         this.dateOfBirth = dateOfBirth;
@@ -38,7 +38,11 @@ public class Dog {
     }
 
     public int getId() {
-        return id;
+        return Dogid;
+    }
+
+    public void setId(int Dogid) {
+        this.Dogid = Dogid;
     }
 
     public String getName() {

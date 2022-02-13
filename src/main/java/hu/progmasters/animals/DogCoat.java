@@ -1,4 +1,4 @@
-package hu.progmasters;
+package hu.progmasters.animals;
 
 import hu.progmasters.enums.CoatColor;
 import hu.progmasters.enums.CoatLength;
