@@ -1,4 +1,4 @@
-Name;mobile nr;Post Code City Street
+Name;Phone;Address(City;PostCode;Street;Number
 Berecz Renáta;06209134455;Budapest 1068 Benczúr utca 35
 Csarnó Sándor;06209136689;Budapest 1148 Kerepesi út 34
 Hadobás Ádám;06209136623;Budapest 1081 Népszínház utca 55

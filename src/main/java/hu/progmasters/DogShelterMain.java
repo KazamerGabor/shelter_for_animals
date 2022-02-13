@@ -1,8 +1,8 @@
 package hu.progmasters;
 
 import hu.progmasters.animals.Dog;
+import hu.progmasters.database.config.UsageByManual;
 import hu.progmasters.humans.Owner;
-import hu.progmasters.humans.Person;
 import hu.progmasters.humans.Volunteer;
 import hu.progmasters.humans.Worker;
 
@@ -15,7 +15,15 @@ public class DogShelterMain {
     List<Owner> ownerList = new ArrayList<>();
     List<Volunteer> volunteerList = new ArrayList<>();
     List<Worker> workerList = new ArrayList();
-//    List<Person> personList = new ArrayList<>();
+
+    //    List<Person> personList = new ArrayList<>();
+    public static void main(String[] args) {
+
+        UsageByManual test = new UsageByManual();
+        test.initTable();
+        test.initAddressFromFile();
+
+    }
 
     public DogShelterMain(List<Dog> dogList, List<Owner> ownerList, List<Volunteer> volunteerList, List<Worker> workerList) {
         this.dogList = dogList;
