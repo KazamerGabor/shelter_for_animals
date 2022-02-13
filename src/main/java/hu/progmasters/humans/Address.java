@@ -1,4 +1,4 @@
-package hu.progmasters;
+package hu.progmasters.humans;
 
 public class Address {
 
@@ -26,6 +26,10 @@ public class Address {
 
     public int getAddressId() {
         return addressId;
+    }
+
+    public void setAddressId(int addressId) {
+        this.addressId = addressId;
     }
 
     public int getPostalCode() {
