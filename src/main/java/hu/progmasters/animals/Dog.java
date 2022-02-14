@@ -4,7 +4,7 @@ import hu.progmasters.enums.Sex;
 import hu.progmasters.enums.Status;
 
 public class Dog {
-    private int Dogid;
+    private int DogId;
     private String name;
     private String breed;
     private String dateOfBirth;
@@ -14,8 +14,8 @@ public class Dog {
     private DogCoat dogCoat;
     private DogHealth dogHealth;
 
-    public Dog(int Dogid, String name, String breed, String dateOfBirth, Sex sex, int weight, Status status, DogCoat dogCoat, DogHealth dogHealth) {
-        this.Dogid = Dogid;
+    public Dog(int DogId, String name, String breed, String dateOfBirth, Sex sex, int weight, Status status, DogCoat dogCoat, DogHealth dogHealth) {
+        this.DogId = DogId;
         this.name = name;
         this.breed = breed;
         this.dateOfBirth = dateOfBirth;
@@ -37,12 +37,12 @@ public class Dog {
         this.dogHealth = dogHealth;
     }
 
-    public int getId() {
-        return Dogid;
+    public int getDogId() {
+        return DogId;
     }
 
-    public void setId(int Dogid) {
-        this.Dogid = Dogid;
+    public void setDogId(int Dogid) {
+        this.DogId = Dogid;
     }
 
     public String getName() {
@@ -107,5 +107,20 @@ public class Dog {
 
     public void setDogHealth(DogHealth dogHealth) {
         this.dogHealth = dogHealth;
+    }
+
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "DogId=" + DogId +
+                ", name='" + name + '\'' +
+                ", breed='" + breed + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", sex=" + sex +
+                ", weight=" + weight +
+                ", status=" + status +
+                ", dogCoat=" + dogCoat +
+                ", dogHealth=" + dogHealth +
+                '}';
     }
 }

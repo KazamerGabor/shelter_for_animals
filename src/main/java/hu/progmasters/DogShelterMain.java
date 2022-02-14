@@ -1,11 +1,14 @@
 package hu.progmasters;
 
 import hu.progmasters.animals.Dog;
+//import hu.progmasters.database.config.UsageByManual;
+import hu.progmasters.database.config.UsageByManual;
+import hu.progmasters.database.config.UsageByReading;
 import hu.progmasters.humans.Owner;
-import hu.progmasters.humans.Person;
 import hu.progmasters.humans.Volunteer;
 import hu.progmasters.humans.Worker;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +18,28 @@ public class DogShelterMain {
     List<Owner> ownerList = new ArrayList<>();
     List<Volunteer> volunteerList = new ArrayList<>();
     List<Worker> workerList = new ArrayList();
-//    List<Person> personList = new ArrayList<>();
+
+    //    List<Person> personList = new ArrayList<>();
+    public static void main(String[] args) {
+
+        UsageByManual test = new UsageByManual();
+        UsageByReading test2 = null;
+        try {
+            test2 = new UsageByReading();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        test.initAddressTable();
+        test.initAddressFromFile();
+        test2.initDogTable();
+        test2.readingDogsFromFileAndIntoSQL();
+//        test2.intoSQL();
+
+
+
+    }
 
     public DogShelterMain(List<Dog> dogList, List<Owner> ownerList, List<Volunteer> volunteerList, List<Worker> workerList) {
         this.dogList = dogList;
