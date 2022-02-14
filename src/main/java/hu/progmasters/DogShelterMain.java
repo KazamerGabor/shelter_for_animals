@@ -2,6 +2,7 @@ package hu.progmasters;
 
 import hu.progmasters.animals.Dog;
 //import hu.progmasters.database.config.UsageByManual;
+import hu.progmasters.database.config.UsageByManual;
 import hu.progmasters.database.config.UsageByReading;
 import hu.progmasters.humans.Owner;
 import hu.progmasters.humans.Volunteer;
@@ -21,19 +22,20 @@ public class DogShelterMain {
     //    List<Person> personList = new ArrayList<>();
     public static void main(String[] args) {
 
-//        UsageByManual test = new UsageByManual();
-        UsageByReading test2= null;
+        UsageByManual test = new UsageByManual();
+        UsageByReading test2 = null;
         try {
             test2 = new UsageByReading();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-//        test.initAddressTable();
-//        test.initAddressFromFile();
-//        test2.initDogTable();
+
+        test.initAddressTable();
+        test.initAddressFromFile();
+        test2.initDogTable();
         test2.readingDogsFromFileAndIntoSQL();
-        test2.intoSQL();
+//        test2.intoSQL();
 
 
 

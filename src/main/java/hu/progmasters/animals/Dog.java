@@ -108,4 +108,19 @@ public class Dog {
     public void setDogHealth(DogHealth dogHealth) {
         this.dogHealth = dogHealth;
     }
+
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "DogId=" + DogId +
+                ", name='" + name + '\'' +
+                ", breed='" + breed + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", sex=" + sex +
+                ", weight=" + weight +
+                ", status=" + status +
+                ", dogCoat=" + dogCoat +
+                ", dogHealth=" + dogHealth +
+                '}';
+    }
 }

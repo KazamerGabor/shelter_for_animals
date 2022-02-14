@@ -39,6 +39,15 @@ public class DogCoat {
     public void setShedding(Shedding shedding) {
         this.shedding = shedding;
     }
+
+    @Override
+    public String toString() {
+        return "DogCoat{" +
+                "coatColor=" + coatColor +
+                ", coatLength=" + coatLength +
+                ", shedding=" + shedding +
+                '}';
+    }
 }
 
 

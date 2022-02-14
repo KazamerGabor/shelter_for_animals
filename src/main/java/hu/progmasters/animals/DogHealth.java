@@ -37,4 +37,13 @@ public class DogHealth {
     public void setHealthStatus(HealthStatus healthStatus) {
         this.healthStatus = healthStatus;
     }
+
+    @Override
+    public String toString() {
+        return "DogHealth{" +
+                "vaccinated=" + vaccinated +
+                ", dewormed=" + dewormed +
+                ", healthStatus=" + healthStatus +
+                '}';
+    }
 }
