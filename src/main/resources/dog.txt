@@ -1,7 +1,3 @@
-name;breed;date_of_birth;sex;weight;status;coat_colour;coat_length;shedding;vaccinated;dewormed;health_status
-Ajax;yorkshire;2010-02-24;male;4;adoptable;brown;short;low;TRUE;FALSE;healthy
-Angelina;tacskó;2010-03-03;female;6;adoptable;red;medium;low;FALSE;FALSE;injured
-Antoinette;kopó;2010-03-10;female;16;adoptable;black;long;medium;FALSE;TRUE;healthy
 Aphrodite;husky;2010-03-17;female;44;adoptable;white;medium;high;TRUE;TRUE;healthy
 April;németjuhász;2010-03-24;male;53;adoptable;gold;medium;high;TRUE;FALSE;healthy
 Aquamarine;malamut;2010-03-31;female;50;adoptable;yellow;short;high;TRUE;TRUE;healthy

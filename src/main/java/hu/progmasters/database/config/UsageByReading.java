@@ -10,9 +10,7 @@
 //import java.io.IOException;
 //import java.nio.file.Files;
 //import java.nio.file.Path;
-//import java.nio.file.StandardOpenOption;
 //import java.sql.*;
-//import java.util.ArrayList;
 //import java.util.List;
 //
 //public class UsageByReading implements AutoCloseable {
@@ -21,7 +19,7 @@
 //    List<Dog> dogs;
 //
 //
-//    public UsageByReading() throws IOException {
+//    public UsageByReading() {
 //        try {
 //            connection = DriverManager.getConnection
 //                    (DatabaseConfig.DB_URL, DatabaseConfig.USER, DatabaseConfig.PASSWORD);
@@ -55,14 +53,14 @@
 //
 //    public void readingDogsFromFileAndIntoSQL() {
 //        Path path = Path.of("src/main/resources/dog.txt");
-//        dogs = new ArrayList<>();
+////        dogs = new ArrayList<>();
 //        try (BufferedReader bufferedReader = Files.newBufferedReader(path)) {
 //            String line;
 //            bufferedReader.readLine();
 //            while ((line = bufferedReader.readLine()) != null) {
 //                String[] lines = line.split(";");
 //                String name = lines[0];
-//                String breed= lines[1];
+//                String breed = lines[1];
 //                String dateOfBirth = lines[2];
 //                Sex sex = Sex.valueOf(lines[3].toUpperCase());
 //                int weight = Integer.valueOf(lines[4]);
@@ -96,7 +94,6 @@
 //                } catch (SQLException e) {
 //                    e.printStackTrace();
 //                }
-//
 //
 //
 //            }
@@ -136,7 +133,7 @@
 //
 //
 //    @Override
-//    public void close() throws Exception {
+//    public void close() throws SQLException {
 //        connection.close();
 //    }
 //}

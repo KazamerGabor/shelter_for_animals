@@ -43,9 +43,9 @@ public class DogShelterRepository implements AutoCloseable {
                 "dewormed VARCHAR(20) NOT NULL," +
                 "health_status VARCHAR(20) NOT NULL," +
                 "dog_coat_id INT, " +
-                "FOREIGN KEY (dog_coat_id) REFERENCES dog_coat(dog_coat_id))" +
-                "dog_health_id INT, " +
-                "FOREIGN KEY (dog_health_id) REFERENCES dog_health(dog_health_id));";
+                "FOREIGN KEY (dog_coat_id) REFERENCES dog_coat(dog_coat_id));";
+//                "dog_health_id INT, " +
+//                "FOREIGN KEY (dog_health_id) REFERENCES dog_health(dog_health_id));";
         try (Statement statement = connection.createStatement()) {
             statement.execute(sql);
         } catch (SQLException throwables) {
