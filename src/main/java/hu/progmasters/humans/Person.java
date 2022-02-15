@@ -1,7 +1,4 @@
-package hu.progmasters;
-
-import java.util.ArrayList;
-import java.util.List;
+package hu.progmasters.humans;
 
 public abstract class Person {
     protected String name;

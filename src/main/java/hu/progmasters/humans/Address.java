@@ -1,4 +1,4 @@
-package hu.progmasters;
+package hu.progmasters.humans;
 
 public class Address {
 
@@ -8,7 +8,7 @@ public class Address {
     private String street;
     private int number;
 
-    public Address(int addressId, int postalCode, String city, String street, int number) {
+    public Address(int addressId, String city, int postalCode, String street, int number) {
         this.addressId = addressId;
         this.postalCode = postalCode;
         this.city = city;
@@ -16,10 +16,10 @@ public class Address {
         this.number = number;
     }
 
-    public Address(int postalCode, String city, String street, int number) {
+    public Address(String city, int postalCode, String street, int number) {
 
-        this.postalCode = postalCode;
         this.city = city;
+        this.postalCode = postalCode;
         this.street = street;
         this.number = number;
     }
@@ -28,6 +28,9 @@ public class Address {
         return addressId;
     }
 
+    public void setAddressId(int addressId) {
+        this.addressId = addressId;
+    }
 
     public int getPostalCode() {
         return postalCode;

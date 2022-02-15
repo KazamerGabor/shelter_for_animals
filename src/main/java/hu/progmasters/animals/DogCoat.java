@@ -1,4 +1,4 @@
-package hu.progmasters;
+package hu.progmasters.animals;
 
 import hu.progmasters.enums.CoatColor;
 import hu.progmasters.enums.CoatLength;
@@ -38,6 +38,15 @@ public class DogCoat {
 
     public void setShedding(Shedding shedding) {
         this.shedding = shedding;
+    }
+
+    @Override
+    public String toString() {
+        return "DogCoat{" +
+                "coatColor=" + coatColor +
+                ", coatLength=" + coatLength +
+                ", shedding=" + shedding +
+                '}';
     }
 }
 
