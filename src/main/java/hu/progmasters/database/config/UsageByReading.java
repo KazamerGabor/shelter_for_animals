@@ -12,7 +12,7 @@
 //import java.nio.file.Path;
 //import java.sql.*;
 //import java.util.List;
-//
+////
 //public class UsageByReading implements AutoCloseable {
 //    Connection connection;
 //    List<Address> addresses;
@@ -70,8 +70,8 @@
 //                DogHealth dogHealth = new DogHealth(Boolean.valueOf(lines[9]), Boolean.valueOf(lines[10]),
 //                        HealthStatus.valueOf(lines[11].toUpperCase()));
 //
-////                dogs.add(new Dog(name, breed, dateOfBirth, sex, weight, status, dogCoat, dogHealth));
-//
+//                dogs.add(new Dog(name, breed, dateOfBirth, sex, weight, status, dogCoat, dogHealth));
+
 //                String sql = "INSERT INTO dog (name, breed, date_of_birth, sex, weight, status, coat_color, coat_length," +
 //                        " shedding, vaccinated, dewormed, health_status)" +
 //                        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
