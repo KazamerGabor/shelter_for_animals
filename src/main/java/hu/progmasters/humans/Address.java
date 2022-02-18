@@ -6,9 +6,9 @@ public class Address {
     private int postalCode;
     private String city;
     private String street;
-    private int number;
+    private String number;
 
-    public Address(int addressId, String city, int postalCode, String street, int number) {
+    public Address(int addressId, String city, int postalCode, String street, String number) {
         this.addressId = addressId;
         this.postalCode = postalCode;
         this.city = city;
@@ -16,7 +16,7 @@ public class Address {
         this.number = number;
     }
 
-    public Address(String city, int postalCode, String street, int number) {
+    public Address(String city, int postalCode, String street, String number) {
 
         this.city = city;
         this.postalCode = postalCode;
@@ -56,11 +56,11 @@ public class Address {
         this.street = street;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 }
