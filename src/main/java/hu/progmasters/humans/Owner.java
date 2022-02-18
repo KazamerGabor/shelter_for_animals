@@ -4,12 +4,12 @@ public class Owner extends Person {
     protected int ownerId;
 
 
-    public Owner(int ownerId, String name, int phoneNumber, Address address) {
+    public Owner(int ownerId, String name, String phoneNumber, Address address) {
         super(name, phoneNumber, address);
         this.ownerId = ownerId;
     }
 
-    public Owner(String name, int phoneNumber, Address address) {
+    public Owner(String name, String phoneNumber, Address address) {
         super(name, phoneNumber, address);
     }
 

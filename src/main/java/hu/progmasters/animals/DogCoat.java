@@ -5,12 +5,19 @@ import hu.progmasters.enums.CoatLength;
 import hu.progmasters.enums.Shedding;
 
 public class DogCoat {
-
+    private int dogCoatId;
     private CoatColor coatColor;
     private CoatLength coatLength;
     private Shedding shedding;
 
     public DogCoat(CoatColor coatColor, CoatLength coatLength, Shedding shedding) {
+        this.coatColor = coatColor;
+        this.coatLength = coatLength;
+        this.shedding = shedding;
+    }
+
+    public DogCoat(int dogCoatId, CoatColor coatColor, CoatLength coatLength, Shedding shedding) {
+        this.dogCoatId = dogCoatId;
         this.coatColor = coatColor;
         this.coatLength = coatLength;
         this.shedding = shedding;
@@ -40,10 +47,19 @@ public class DogCoat {
         this.shedding = shedding;
     }
 
+    public int getDogCoatId() {
+        return dogCoatId;
+    }
+
+    public void setDogCoatId(int dogCoatId) {
+        this.dogCoatId = dogCoatId;
+    }
+
     @Override
     public String toString() {
         return "DogCoat{" +
-                "coatColor=" + coatColor +
+                "dogCoatId=" + dogCoatId +
+                ", coatColor=" + coatColor +
                 ", coatLength=" + coatLength +
                 ", shedding=" + shedding +
                 '}';

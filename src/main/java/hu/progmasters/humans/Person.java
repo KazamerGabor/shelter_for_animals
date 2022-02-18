@@ -2,10 +2,10 @@ package hu.progmasters.humans;
 
 public abstract class Person {
     protected String name;
-    protected int phoneNumber;
+    protected String phoneNumber;
     protected Address address;
 
-    public Person(String name, int phoneNumber, Address address) {
+    public Person(String name, String phoneNumber, Address address) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;
@@ -19,11 +19,11 @@ public abstract class Person {
         this.name = name;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

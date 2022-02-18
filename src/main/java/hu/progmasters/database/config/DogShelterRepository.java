@@ -18,19 +18,19 @@ public class DogShelterRepository implements AutoCloseable {
     }
 
     public void initAllTables() {
-        initDogTable();
         initDogCoatTable();
         initDogHealthTable();
+        initDogTable();
+        initAddressTable();
         initOwnerTable();
         initWorkerTable();
-        initAddressTable();
     }
 
     public void initDogTable() {
         String sql = "CREATE TABLE IF NOT EXISTS dog (" +
                 "dog_id INT PRIMARY KEY AUTO_INCREMENT," +
-                "name VARCHAR(10) NOT NULL," +
-                "breed VARCHAR(20) NOT NULL," +
+                "name VARCHAR(255) NOT NULL," +
+                "breed VARCHAR(255) NOT NULL," +
                 "date_of_birth DATE NOT NULL," +
                 "sex VARCHAR(6) NOT NULL," +
                 "weight INT NOT NULL," +
@@ -42,9 +42,9 @@ public class DogShelterRepository implements AutoCloseable {
                 "dewormed VARCHAR(20) NOT NULL," +
                 "health_status VARCHAR(20) NOT NULL," +
                 "dog_coat_id INT, " +
-                "FOREIGN KEY (dog_coat_id) REFERENCES dog_coat(dog_coat_id));";
-//                "dog_health_id INT, " +
-//                "FOREIGN KEY (dog_health_id) REFERENCES dog_health(dog_health_id));";
+                "dog_health_id INT, " +
+                "FOREIGN KEY (dog_coat_id) REFERENCES dog_coat(dog_coat_id), " +
+                "FOREIGN KEY (dog_health_id) REFERENCES dog_health(dog_health_id));";
         try (Statement statement = connection.createStatement()) {
             statement.execute(sql);
         } catch (SQLException throwables) {
@@ -82,7 +82,7 @@ public class DogShelterRepository implements AutoCloseable {
         String sql = "CREATE TABLE IF NOT EXISTS owner (" +
                 "owner_id INT PRIMARY KEY AUTO_INCREMENT, " +
                 "name VARCHAR(255) NOT NULL, " +
-                "phoneNumber INT NOT NULL, " +
+                "phoneNumber VARCHAR(25) NOT NULL, " +
                 "address_id INT, " +
                 "FOREIGN KEY (address_id) REFERENCES address(address_id));";
         try (Statement statement = connection.createStatement()) {
@@ -96,7 +96,7 @@ public class DogShelterRepository implements AutoCloseable {
         String sql = "CREATE TABLE IF NOT EXISTS worker (" +
                 "worker_id INT PRIMARY KEY AUTO_INCREMENT, " +
                 "name VARCHAR(255) NOT NULL, " +
-                "phoneNumber INT NOT NULL, " +
+                "phoneNumber VARCHAR(25) NOT NULL, " +
                 "address_id INT, " +
                 "FOREIGN KEY (address_id) REFERENCES address(address_id));";
         try (Statement statement = connection.createStatement()) {
@@ -112,7 +112,7 @@ public class DogShelterRepository implements AutoCloseable {
                 "postal_code INT NOT NULL, " +
                 "city VARCHAR(20) NOT NULL, " +
                 "street VARCHAR(100) NOT NULL, " +
-                "number INT NOT NULL);";
+                "number VARCHAR(10) NOT NULL);";
 
         try (Statement statement = connection.createStatement()) {
             statement.execute(sql);
