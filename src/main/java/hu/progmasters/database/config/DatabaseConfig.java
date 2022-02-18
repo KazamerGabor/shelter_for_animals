@@ -6,5 +6,6 @@ public class DatabaseConfig {
             "jdbc:mysql://localhost/dog_shelter?createDatabaseIfNotExist=true&serverTimezone=UTC&useSSL=false";
     public static final String USER = "root";
     public static final String PASSWORD = "Test123!";
+
 }
 
