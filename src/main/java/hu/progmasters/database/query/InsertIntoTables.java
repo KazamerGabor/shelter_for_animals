@@ -32,6 +32,20 @@ public class InsertIntoTables implements AutoCloseable {
         }
     }
 
+    public void readTextFiles(){
+        readDogText();
+        readWorkerText();
+    }
+
+    public void insertIntoTables(){
+        insertIntoAddress();
+        insertIntoDogCoat();
+        insertIntoDogHealth();
+        insertIntoDog();
+        insertIntoAddress();
+        insertIntoWorker();
+
+    }
 
     public void readDogText() {
         Path path = Path.of("src/main/resources/dog.txt");
@@ -82,9 +96,9 @@ public class InsertIntoTables implements AutoCloseable {
 
     public void insertIntoDog() {
 
-        String sql = "INSERT INTO dog (name, breed, date_of_birth, sex, weight, status, coat_color, coat_length," +
-                " shedding, vaccinated, dewormed, health_status, dog_coat_id, dog_health_id)" +
-                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        String sql = "INSERT INTO dog (name, breed, date_of_birth, sex, weight, status," +
+                " dog_coat_id, dog_health_id)" +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
         for (Dog dog : dogList) {
 
             try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
@@ -94,14 +108,8 @@ public class InsertIntoTables implements AutoCloseable {
                 preparedStatement.setString(4, String.valueOf(dog.getSex()));
                 preparedStatement.setInt(5, dog.getWeight());
                 preparedStatement.setString(6, String.valueOf(dog.getStatus()));
-                preparedStatement.setString(7, String.valueOf(dog.getDogCoat().getCoatColor()));
-                preparedStatement.setString(8, String.valueOf(dog.getDogCoat().getCoatLength()));
-                preparedStatement.setString(9, String.valueOf(dog.getDogCoat().getShedding()));
-                preparedStatement.setBoolean(10, dog.getDogHealth().isVaccinated());
-                preparedStatement.setBoolean(11, dog.getDogHealth().isDewormed());
-                preparedStatement.setString(12, String.valueOf(dog.getDogHealth().getHealthStatus()));
-                preparedStatement.setInt(13, dog.getDogCoat().getDogCoatId());
-                preparedStatement.setInt(14, dog.getDogHealth().getDogHealthId());
+                preparedStatement.setInt(7, dog.getDogCoat().getDogCoatId());
+                preparedStatement.setInt(8, dog.getDogHealth().getDogHealthId());
 
                 preparedStatement.executeUpdate();
             } catch (SQLException e) {
@@ -127,7 +135,26 @@ public class InsertIntoTables implements AutoCloseable {
                 int generatedKey = 0;
                 if (resultSet.next()) {
                     generatedKey = resultSet.getInt(1);
+                    worker.getAddress().setAddressId(generatedKey);
                 }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void insertIntoWorker() {
+
+        String sql = "INSERT INTO worker (name, phone_number, address_id) VALUES (?, ?, ?);";
+        for (Worker worker : workerList) {
+
+            try (PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+                preparedStatement.setString(1, worker.getName());
+                preparedStatement.setString(2, worker.getPhoneNumber());
+                preparedStatement.setInt(3, worker.getAddress().getAddressId());
+
+                preparedStatement.executeUpdate();
+
             } catch (SQLException e) {
                 e.printStackTrace();
             }

@@ -10,13 +10,10 @@ public class DogShelterMain {
 
         DogShelterRepository dogShelterRepository = new DogShelterRepository();
         dogShelterRepository.initAllTables();
+
         InsertIntoTables insertIntoTables = new InsertIntoTables();
-        insertIntoTables.readDogText();
-        insertIntoTables.readWorkerText();
-        insertIntoTables.insertIntoAddress();
-        insertIntoTables.insertIntoDogCoat();
-        insertIntoTables.insertIntoDogHealth();
-        insertIntoTables.insertIntoDog();
+        insertIntoTables.readTextFiles();
+        insertIntoTables.insertIntoTables();
 
     }
 }
