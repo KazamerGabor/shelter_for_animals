@@ -1,8 +1,8 @@
 package hu.progmasters;
 
 import hu.progmasters.database.config.DogShelterRepository;
+import hu.progmasters.database.query.Domain;
 import hu.progmasters.database.query.InsertIntoTables;
-
 
 public class DogShelterMain {
 
@@ -15,5 +15,12 @@ public class DogShelterMain {
         insertIntoTables.readTextFiles();
         insertIntoTables.insertIntoTables();
 
+        Domain domain = new Domain();
+        domain.selectedBreed();
+        domain.selectedSex();
+        domain.selectedAge();
+
+
     }
+
 }

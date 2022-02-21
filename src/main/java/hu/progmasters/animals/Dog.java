@@ -3,6 +3,9 @@ package hu.progmasters.animals;
 import hu.progmasters.enums.Sex;
 import hu.progmasters.enums.Status;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Dog {
     private int DogId;
     private String name;
@@ -13,6 +16,9 @@ public class Dog {
     private Status status;
     private DogCoat dogCoat;
     private DogHealth dogHealth;
+
+    public Dog() {
+    }
 
     public Dog(int DogId, String name, String breed, String dateOfBirth, Sex sex, int weight, Status status, DogCoat dogCoat, DogHealth dogHealth) {
         this.DogId = DogId;
@@ -36,6 +42,7 @@ public class Dog {
         this.dogCoat = dogCoat;
         this.dogHealth = dogHealth;
     }
+
 
     public int getDogId() {
         return DogId;
