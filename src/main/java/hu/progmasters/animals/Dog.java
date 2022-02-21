@@ -3,24 +3,23 @@ package hu.progmasters.animals;
 import hu.progmasters.enums.Sex;
 import hu.progmasters.enums.Status;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 
 public class Dog {
     private int DogId;
     private String name;
     private String breed;
-    private String dateOfBirth;
+    private Date dateOfBirth;
     private Sex sex;
     private int weight;
     private Status status;
     private DogCoat dogCoat;
     private DogHealth dogHealth;
 
-    public Dog() {
+    public Dog(int dog_id, String name, String breed, java.sql.Date date_of_birth, String sex, int weight, String status) {
     }
 
-    public Dog(int DogId, String name, String breed, String dateOfBirth, Sex sex, int weight, Status status, DogCoat dogCoat, DogHealth dogHealth) {
+    public Dog(int DogId, String name, String breed, Date dateOfBirth, Sex sex, int weight, Status status, DogCoat dogCoat, DogHealth dogHealth) {
         this.DogId = DogId;
         this.name = name;
         this.breed = breed;
@@ -32,7 +31,7 @@ public class Dog {
         this.dogHealth = dogHealth;
     }
 
-    public Dog(String name, String breed, String dateOfBirth, Sex sex, int weight, Status status, DogCoat dogCoat, DogHealth dogHealth) {
+    public Dog(String name, String breed, Date dateOfBirth, Sex sex, int weight, Status status, DogCoat dogCoat, DogHealth dogHealth) {
         this.name = name;
         this.breed = breed;
         this.dateOfBirth = dateOfBirth;
@@ -68,11 +67,11 @@ public class Dog {
         this.breed = breed;
     }
 
-    public String getDateOfBirth() {
+    public Date getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

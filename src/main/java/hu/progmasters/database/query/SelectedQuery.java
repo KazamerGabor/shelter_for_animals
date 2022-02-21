@@ -4,11 +4,13 @@ import hu.progmasters.animals.Dog;
 import hu.progmasters.database.config.DatabaseConfig;
 
 import java.sql.*;
+import java.text.StringCharacterIterator;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 import static hu.progmasters.database.query.Domain.selectedDog;
-import static jdk.nashorn.internal.objects.NativeDate.getDate;
+
 
 public class SelectedQuery {
     Connection connection;
@@ -51,10 +53,10 @@ public class SelectedQuery {
                         resultSet.getInt("dog_id"),
                         resultSet.getString("name"),
                         resultSet.getString("breed"),
-                        resultSet.getString((date_of_birth)),
+                        resultSet.getDate("date_of_birth"),
                         resultSet.getString("sex"),
                         resultSet.getInt("weight"),
-                        resultSet.getString("status"));
+                        resultSet.getString("status")));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();

@@ -56,7 +56,7 @@ public class InsertIntoTables implements AutoCloseable {
                 String[] lines = line.split(";");
                 String name = lines[0];
                 String breed = lines[1];
-                String dateOfBirth = lines[2];
+                Date dateOfBirth = Date.valueOf(lines[2]);
                 Sex sex = Sex.valueOf(lines[3].toUpperCase());
                 int weight = Integer.valueOf(lines[4]);
                 Status status = Status.valueOf(lines[5].toUpperCase());
@@ -104,7 +104,7 @@ public class InsertIntoTables implements AutoCloseable {
             try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
                 preparedStatement.setString(1, dog.getName());
                 preparedStatement.setString(2, dog.getBreed());
-                preparedStatement.setString(3, dog.getDateOfBirth());
+                preparedStatement.setDate(3, (Date) dog.getDateOfBirth());
                 preparedStatement.setString(4, String.valueOf(dog.getSex()));
                 preparedStatement.setInt(5, dog.getWeight());
                 preparedStatement.setString(6, String.valueOf(dog.getStatus()));
